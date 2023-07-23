@@ -34,45 +34,6 @@ type CheapestFlightResponseData struct {
 	ReturnPrice      int    `json:"Return Price"`
 }
 
-/*
-{
-	"_id": {
-	  "$oid": "648095079b6d8b50581b727b"
-	},
-	"airline": "LH",
-	"airlineid": 3320,
-	"srcairport": "SIN",
-	"srcairportid": 3316,
-	"destairport": "FRA",
-	"destairportid": 340,
-	"codeshare": "",
-	"stop": 0,
-	"eq": "388",
-	"airlinename": "Lufthansa",
-	"srcairportname": "Singapore Changi Airport",
-	"srccity": "Singapore",
-	"srccountry": "Singapore",
-	"destairportname": "Frankfurt am Main Airport",
-	"destcity": "Frankfurt",
-	"destcountry": "Germany",
-	"price": 2432,
-	"date": {
-	  "$date": "2023-12-10T00:00:00.000Z"
-	}
-  }
-  [
-  {
-    "City": "Frankfurt",
-    "Departure Date": "2023-12-10",
-    "Departure Airline": "US Airways",
-    "Departure Price": 1766,
-    "Return Date": "2023-12-16",
-    "Return Airline": "US Airways",
-    "Return Price": 716
-  }
-  ]
-*/
-
 func GetFlights(w http.ResponseWriter, r *http.Request, flightsCollection *mongo.Collection) {
 
 	params := r.URL.Query()
@@ -110,7 +71,7 @@ func GetFlights(w http.ResponseWriter, r *http.Request, flightsCollection *mongo
 		}
 	}
 
-	var cheapestFlightsResponseSlice []CheapestFlightResponseData
+	var cheapestFlightsResponseSlice []CheapestFlightResponseData = make([]CheapestFlightResponseData, 0)
 
 	for returningFlights.Next(context.Background()) {
 		var returningFlight Flight

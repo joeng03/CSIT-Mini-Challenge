@@ -77,7 +77,7 @@ func GetHotels(w http.ResponseWriter, r *http.Request, hotelsCollection *mongo.C
 		w.WriteHeader(http.StatusBadRequest)
 	}
 
-	var cheapestHotelsResponseSlice []CheapestHotelResponseData
+	var cheapestHotelsResponseSlice []CheapestHotelResponseData = make([]CheapestHotelResponseData, 0)
 	checkInDateString := checkInDate.Format("2006-01-02")
 	checkOutDateString := checkOutDate.Format("2006-01-02")
 
