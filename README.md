@@ -10,4 +10,8 @@ Badge:
 ![detail](https://file.go.gov.sg/csit-se-challenge-2023-dbadge.png)
 
 
-Stack: Golang, MongoDB, Docker
+Stack: 
+
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
